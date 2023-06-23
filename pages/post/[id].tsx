@@ -5,6 +5,9 @@ import {
   NextPage,
 } from 'next';
 import Layout from '../../lib/components/layout';
+import { getPostDetail } from '../../lib/services/post.service';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 type PostDetail = {
   backgroundImage: string;
@@ -17,7 +20,15 @@ interface DetailPageProps {
   postDetail: PostDetail;
 }
 const Post: NextPage<DetailPageProps> = ({ postDetail }) => {
-  console.log(postDetail);
+  const router = useRouter();
+  if (!postDetail) {
+    postDetail = {
+      backgroundImage: '/img/404.jpg',
+      title: 'not found',
+      subTitle: 'not found',
+      content: 'there is no data to show',
+    };
+  }
   return (
     <Layout
       backgroundImage={postDetail.backgroundImage}
@@ -42,11 +53,10 @@ const Post: NextPage<DetailPageProps> = ({ postDetail }) => {
 export const getServerSideProps: GetServerSideProps<DetailPageProps> = async ({
   params,
 }) => {
-  const postId = params?.id as string | undefined;
-  const res = await fetch(`http://localhost:3000/api/posts/${postId}`);
-  const postDetail = await res.json();
-  // console.log(postDetail);
-  return { props: { postDetail: postDetail[0] } };
+  const postId = params?.id as string;
+  const postDetail = await getPostDetail(postId);
+  if (postDetail) return { props: { postDetail } };
+  return { props: { postDetail: null } };
 };
 
 export default Post;

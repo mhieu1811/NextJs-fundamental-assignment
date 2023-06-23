@@ -3,29 +3,20 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
   id: string;
-  backgroundImage: string;
   title: string;
   subTitle: string;
-  meta: string;
-  content: string;
 };
 
 const data = [
   {
     id: '1',
-    backgroundImage: '/img/post-bg.jpg',
-    title: 'Post 1',
-    subTitle: 'post ne`',
-    meta: 'Day la post ne`',
-    content: '<h1 style="text-align: center"> There is no content </h1>',
+    title: 'How To Raise An Empathetic Child In A World Devoid Of Kindness',
+    subTitle: 'my first blog post',
   },
   {
     id: '2',
-    backgroundImage: '/img/post-bg.jpg',
-    title: 'Post 1',
-    subTitle: 'post ne`',
-    meta: 'Day la post ne`',
-    content: '<h1 style="text-align: center"> There is no content </h1>',
+    title: 'My First Blog Post',
+    subTitle: 'my first blog post',
   },
 ];
 export default function handler(

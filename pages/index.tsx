@@ -5,11 +5,8 @@ import { getList } from '../lib/services/post.service';
 
 type Post = {
   id: string;
-  backgroundImage: string;
   title: string;
   subTitle: string;
-  meta: string;
-  content: string;
 };
 
 interface HomePageProps {

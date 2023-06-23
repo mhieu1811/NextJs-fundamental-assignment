@@ -15,9 +15,9 @@ const NavBar: NextPage = () => {
             <span className="sr-only">Toggle navigation</span>
             Menu <i className="fa fa-bars"></i>
           </button>
-          <a className="navbar-brand" href="index.html">
+          <Link className="navbar-brand" href="/">
             Start Bootstrap
-          </a>
+          </Link>
         </div>
 
         <div
@@ -32,7 +32,7 @@ const NavBar: NextPage = () => {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/post">Sample Post</Link>
+              <Link href="/post/1">Sample Post</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
