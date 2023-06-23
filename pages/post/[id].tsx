@@ -1,7 +1,5 @@
 import {
   GetServerSideProps,
-  GetStaticPaths,
-  GetStaticProps,
   NextPage,
 } from 'next';
 import Layout from '../../lib/components/layout';
