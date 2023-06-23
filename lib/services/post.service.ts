@@ -1,5 +1,5 @@
 export async function getList() {
-  const res = await fetch(`${process.env.API_ENDPOINT}/api/posts`);
+  const res = await fetch(`https://next-js-fundamental-assignment-mhieu1811.vercel.app/api/posts`);
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -7,7 +7,7 @@ export async function getList() {
 }
 
 export async function getPostDetail(postId: string) {
-  const res = await fetch(`${process.env.API_ENDPOINT}/api/posts/${postId}`);
+  const res = await fetch(`https://next-js-fundamental-assignment-mhieu1811.vercel.app/api/posts/${postId}`);
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
